@@ -43,7 +43,7 @@ public class RegistrarUsuarioAction implements Accion {
 			// El email no es valido y hay que tratar el error
 			Log.debug("Email inválido!");
 			result = "FRACASO";
-		} else if (Comprobador.esContraseñasIguales(contraseña,
+		} else if (!Comprobador.esContraseñasIguales(contraseña,
 				contraseñaRepetida)) {
 			Log.debug("Las contraseñas no son iguales!");
 			result = "FRACASO";

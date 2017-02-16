@@ -78,6 +78,12 @@ public class User {
 		this.status = status;
 		return this;
 	}
+	
+//	public UserStatus changeStatus(){
+//		if(status==UserStatus.DISABLED) status=UserStatus.ENABLED;
+//		if(status==UserStatus.ENABLED) status=UserStatus.DISABLED;
+//		return  status;
+//	}
 
 	@Override
 	public int hashCode() {

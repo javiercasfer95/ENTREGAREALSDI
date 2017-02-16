@@ -9,9 +9,10 @@ public class CerrarSesionAction implements Accion {
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) {
 		
+		
 		String resultado="EXITO";
 		
-		// A completar ...
+		
 		
 		return resultado;
 	}
