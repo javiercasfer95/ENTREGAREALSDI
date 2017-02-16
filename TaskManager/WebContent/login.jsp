@@ -18,10 +18,13 @@
 					size="15"></td>
 			</tr>
 			<tr>
+<<<<<<< HEAD
 				<td align="right">Password</td>
 				<td><input type="text" name="userPass" align="left" size="15"></td>
 			</tr>
 			<tr>
+=======
+>>>>>>> 1976f53eeb9db26da7d571c952c59306daf18a05
 				<td><input type="submit" value="Enviar" /></td>
 			</tr>
 		</table>
