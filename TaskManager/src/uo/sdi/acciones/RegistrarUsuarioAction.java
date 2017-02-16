@@ -4,13 +4,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import alb.util.log.Log;
-<<<<<<< HEAD
 import uo.sdi.business.Services;
-=======
->>>>>>> 1976f53eeb9db26da7d571c952c59306daf18a05
 import uo.sdi.business.UserService;
 import uo.sdi.business.exception.BusinessException;
-import uo.sdi.business.impl.user.UserServiceImpl;
 import uo.sdi.dto.User;
 import uo.sdi.util.Comprobador;
 
@@ -55,11 +51,7 @@ public class RegistrarUsuarioAction implements Accion {
 			user.setEmail(email);
 			user.setPassword(contraseña);
 			user.setLogin(nombreUsuario);
-<<<<<<< HEAD
 			UserService userService = Services.getUserService();
-=======
-			UserService userService = new UserServiceImpl();
->>>>>>> 1976f53eeb9db26da7d571c952c59306daf18a05
 			try {
 				userService.registerUser(user);
 			} catch (BusinessException e) {

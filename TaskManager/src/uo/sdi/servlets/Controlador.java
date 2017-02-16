@@ -143,11 +143,11 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 
 		Map<String, Accion> mapaRegistrado = new HashMap<String, Accion>();
 		mapaRegistrado.put("modificarDatos", new ModificarDatosAction());
-<<<<<<< HEAD
+
 		mapaDeAcciones.put("USUARIO", mapaRegistrado);
 
 		// Para el admin
-=======
+
 		mapaRegistrado.put("cerrarSesion", new CerrarSesionAction());
 		mapaDeAcciones.put("USUARIO", mapaRegistrado);
 
@@ -155,7 +155,7 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		Map<String, Accion> mapaAdmin = new HashMap<String, Accion>();
 		mapaAdmin.put("modificarDatos", new ListarCategoriasAction());
 		mapaRegistrado.put("cerrarSesion", new CerrarSesionAction());
->>>>>>> 1976f53eeb9db26da7d571c952c59306daf18a05
+
 		mapaDeAcciones.put("ADMIN", mapaRegistrado);
 	}
 
@@ -171,19 +171,12 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		resultadoYJSP.put("FRACASO", "/login.jsp");
 		opcionResultadoYJSP.put("validarse", resultadoYJSP);
 
-<<<<<<< HEAD
-=======
-		
->>>>>>> 1976f53eeb9db26da7d571c952c59306daf18a05
+
 		resultadoYJSP = new HashMap<String, String>();
 		resultadoYJSP.put("EXITO", "/login.jsp");
 		resultadoYJSP.put("FRACASO", "/login.jsp");
 		opcionResultadoYJSP.put("listarCategorias", resultadoYJSP);
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> 1976f53eeb9db26da7d571c952c59306daf18a05
 		// Leer la clase RegistrarUsuarioAction para decidir.
 		resultadoYJSP = new HashMap<String, String>();
 		/*
@@ -195,18 +188,11 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		 * resultadoYJSP.put("EXITO","/login.jsp");
 		 * resultadoYJSP.put("FRACASO","/registrarUsuarios_form.jsp");
 		 */
-<<<<<<< HEAD
-		resultadoYJSP.put("EXITO", "/login.jsp");
-		resultadoYJSP.put("FRACASO", "/registrarUsuarios_form.jsp");
-		opcionResultadoYJSP.put("registrarse", resultadoYJSP);
 
-=======
 		resultadoYJSP.put("EXITO","/login.jsp");
 		resultadoYJSP.put("FRACASO","/registrarUsuarios_form.jsp");
 		opcionResultadoYJSP.put("registrarse", resultadoYJSP);
-		
-		
->>>>>>> 1976f53eeb9db26da7d571c952c59306daf18a05
+
 		mapaDeNavegacion.put("ANONIMO", opcionResultadoYJSP);
 
 		// Crear mapas auxiliares vacíos
@@ -222,13 +208,11 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		resultadoYJSP.put("FRACASO", "/principalUsuario.jsp");
 		opcionResultadoYJSP.put("modificarDatos", resultadoYJSP);
 
-<<<<<<< HEAD
 		mapaDeNavegacion.put("USUARIO", opcionResultadoYJSP);
 
 		// Mapa de navegación del administrador
 		mapaDeNavegacion.put("ADMIN", opcionResultadoYJSP);
-=======
-		
+
 		resultadoYJSP.put("EXITO", "/login.jsp");
 		opcionResultadoYJSP.put("cerrarSesion", resultadoYJSP);
 		
@@ -250,8 +234,6 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		opcionResultadoYJSP.put("cerrarSesion", resultadoYJSP);
 
 		mapaDeNavegacion.put("ADMIN", opcionResultadoYJSP);
-		
->>>>>>> 1976f53eeb9db26da7d571c952c59306daf18a05
 		// POR HACER ...
 	}
 
