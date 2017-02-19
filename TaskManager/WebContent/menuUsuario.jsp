@@ -7,7 +7,7 @@
 <title>TaskManager - Opciones disponibles</title>
 </head>
 <body>
-	<table border="1" align="center">
+	<!-- <table border="1" align="center">
 		<tr>
 			<form action="listarTareas" method="post"
 				name="opcionUsuario_listarTareas">
@@ -41,7 +41,11 @@
 			</form>
 		</tr>
 
-	</table>
+	</table> -->
+	<a id="listarTareas_link_id" href="listarTareas">Listar tareas</a>
+	<a id="crearTarea_link_id" href="crearTarea">Crear tarea</a>
+	<a id="editarTareas_link_id" href="editarTareas">Editar tareas</a>
+	<a id="listarCategorias_link_id" href="listarCategorias">Listar categorias</a>
 	<%@ include file="pieDePagina.jsp"%>
 </body>
 </html>

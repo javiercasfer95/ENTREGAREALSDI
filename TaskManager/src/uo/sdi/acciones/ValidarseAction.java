@@ -16,7 +16,7 @@ public class ValidarseAction implements Accion {
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) {
 		
-		String resultado="EXITO";
+		String resultado="EXITOUser";
 		String nombreUsuario=request.getParameter("nombreUsuario");
 		String password = request.getParameter("userPass");
 		HttpSession session=request.getSession();
@@ -41,6 +41,11 @@ public class ValidarseAction implements Accion {
 						String.valueOf(contador+1));
 				session.setAttribute("fechaInicioSesion", new java.util.Date());
 				Log.info("El usuario [%s] ha iniciado sesión",nombreUsuario);
+				if(userByLogin.getIsAdmin()){
+					resultado = "EXITOAdmin";
+				}else{
+					resultado = "EXITOUser";
+				}
 			}
 			else {
 				session.invalidate();
