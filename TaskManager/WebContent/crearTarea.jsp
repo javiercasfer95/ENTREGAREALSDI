@@ -32,12 +32,12 @@
 						
 						<tr>
 							<td align="right">Fecha planned (NI IDEA DE COMO SE PONE):</td>
-							<td><input type="text" name="plannedTarea" align="left"
+							<td><input type="date" name="plannedTarea" align="left"
 								size="15"></td>
 						</tr>
 						<tr>
 							<td align="right">Fecha finish (NI IDEA DE COMO SE PONE):</td>
-							<td><input type="text" name="plannedTarea" align="left"
+							<td><input type="date" name="plannedTarea" align="left"
 								size="15"></td>
 						</tr>
 						

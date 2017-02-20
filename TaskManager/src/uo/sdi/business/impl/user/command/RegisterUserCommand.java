@@ -20,6 +20,7 @@ public class RegisterUserCommand implements Command<Long> {
 		UserCheck.isValidEmailSyntax( user ); 
 		UserCheck.minLoginLength( user );
 		UserCheck.minPasswordLength( user );
+		UserCheck.isPasswordValid(user);
 		UserCheck.notRepeatedLogin( user );
 		
 		return Persistence.getUserDao().save( user );
