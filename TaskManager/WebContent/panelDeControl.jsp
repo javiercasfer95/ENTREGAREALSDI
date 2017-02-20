@@ -12,28 +12,31 @@
 								(usuario número ${contador})</i>
 	<br/><br/>
 	<jsp:useBean id="user" class="uo.sdi.dto.User" scope="session" />
-	<table border="1" align="center">
+	<table border="0.1" align="center" cellspacing=0.3 cellpadding=4>
 		<tr>
 			<dl>
-				<dt>Inbox Tasks</dt>
-				<c:forEach var="entry" items="${inboxTasks}" varStatus="i">
-					<dd id="item_${i.index}">		
-<%-- 						<td><a href="mostrarTarea?id=${entry.id}">${entry.id}</a></td>
-						<td>${entry.name}</td> --%>
-						<dl>
-							<dt>${entry.title}</dt>
-								<dd>
-									${entry.comments}
-								</dd>
-							
-						</dl>
-					</dd>
+				<dt>Lista de usuarios</dt>
+				
+				<c:forEach var="entry" items="${listaUsuarios}" varStatus="i">
+				<tr>
+					<dd id="item_${i.index}">
+ 						<td>${entry.id}	</a></td>
+						<td>${entry.login}</td> 
+						<td>${entry.email}</td>
+						<td>${entry.status}</td>
+							<td> <form action="cambiarEstado" method="post" name="opcionCambiarEstado" >
+					<input type="submit" name=envioIndice value="${entry.status=='ENABLED' ? 'DISABLE' : 'ENABLE'}" />
+						</td>
+						</dd>
+						</tr>
 				</c:forEach>
 
 			</dl>
 		</tr>
 
 	</table>
+	<INPUT TYPE="HIDDEN" NAME="idex" value=""></td>
+	
 	<br/>	
 	<a id="panelDeControl_link_id" href="panelDeControl">Panel de control</a>
 	<a id="cerrarSesion_link_id" href="cerrarSesion">Cerrar sesión</a>

@@ -20,21 +20,27 @@ public class ModificarEstadoUsuarioAction implements Accion {
 				HttpServletResponse response) {
 			
 			String resultado="EXITO";
-			HttpSession session=request.getSession();
-			User user=((User)session.getAttribute("user"));
-			Long userId = user.getId();
+			//HttpSession session=request.getSession();
+			Long indice= Long.parseLong(request.getParameter("insert"));
+		
+			User usuario=null ;
 			try {
+				
 				AdminService adminService = Services.getAdminService();
-				if(user.getStatus()==UserStatus.ENABLED)
-					adminService.disableUser(userId);
-				else adminService.enableUser(userId);
+				usuario = adminService.findUserById( indice);
+				if(usuario.getStatus()==UserStatus.ENABLED)
+					adminService.disableUser(indice);
+				else adminService.enableUser(indice);
 				Log.debug("Modificado estado de [%s]. Valor actual: [%s]", 
-						user, user.getStatus() );
+						usuario, usuario.getStatus() );
+				request.setAttribute("mensajeParaElUsuario", "ERROR: no manda correctamente los ids");
+				
+				new ListarUsuariosAction().execute(request, response);
 				
 			}
 			catch (BusinessException b) {
 				Log.debug("Algo ha ocurrido actualizando el estado de [%s]. Estado actual [%s]: %s", 
-						user.getLogin(),user.getStatus(),b.getMessage());
+						usuario.getLogin(),usuario.getStatus(),b.getMessage());
 				resultado="FRACASO";
 			}
 			return resultado;

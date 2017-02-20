@@ -34,7 +34,7 @@ public class ListarUsuariosAction implements Accion{
 			//obtenemos todos los usuarios existentes
 			listaUsuarios = adminService.findAllUsers();
 			request.setAttribute("listaUsuarios", listaUsuarios);
-			
+			request.setAttribute("indice", -1 );
 			Log.debug(
 					"Obtenida lista de usuarios. Obtenidos [%d] usuarios ",
 					listaUsuarios.size());

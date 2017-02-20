@@ -33,7 +33,7 @@
 		</tr>
 	</table>
 	<br/>	
-	<a id="panelDeControl_link_id" href="panelDeControl.jsp">Panel de control</a>
+	<a id="panelDeControl_link_id" href="IRpanelDeControl">Panel de control</a>
 	<a id="cerrarSesion_link_id" href="cerrarSesion">Cerrar sesión</a>
 	
 	<%@ include file="pieDePagina.jsp" %>

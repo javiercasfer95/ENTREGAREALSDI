@@ -28,7 +28,7 @@ public class UserCheck {
 
 	/**
 	 * Metodo que comprueba si la contraseña tiene numeros y letras
-	 * @param user: usuario 
+	 * @param user: usuario asmerluzo
 	 * @throws BusinessException
 	 */
 	public static void isPasswordValid(User user) throws BusinessException {
@@ -40,6 +40,7 @@ public class UserCheck {
 			if(Character.isDigit(c)) numero = true;
 			else if(Character.isLetter(c)) letra = true;
 			if(numero && letra) break;
+			
 		}
 		
 		 BusinessCheck.isTrue(numero && letra, check);
