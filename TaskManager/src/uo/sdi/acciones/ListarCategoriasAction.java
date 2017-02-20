@@ -4,11 +4,13 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import uo.sdi.business.Services;
 import uo.sdi.business.TaskService;
 import uo.sdi.business.exception.BusinessException;
 import uo.sdi.dto.Category;
+import uo.sdi.dto.User;
 import alb.util.log.Log;
 
 public class ListarCategoriasAction implements Accion {
@@ -22,10 +24,14 @@ public class ListarCategoriasAction implements Accion {
 		String resultado="EXITO";
 		
 		List<Category> listaCategorias;
+		HttpSession session = request.getSession();
 		
+		User user = (User) session.getAttribute("user");
+		
+		long userID = user.getId();
 		try {
 			TaskService taskService = Services.getTaskService();
-			listaCategorias=taskService.findCategoriesByUserId(EXAMPLE_USER_ID);
+			listaCategorias=taskService.findCategoriesByUserId(userID);
 			request.setAttribute("listaCategorias", listaCategorias);
 			Log.debug("Obtenida lista de categorías conteniendo [%d] categorías", 
 					listaCategorias.size());

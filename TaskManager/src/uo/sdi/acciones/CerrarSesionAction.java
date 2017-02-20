@@ -2,6 +2,7 @@ package uo.sdi.acciones;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class CerrarSesionAction implements Accion {
 
@@ -11,8 +12,10 @@ public class CerrarSesionAction implements Accion {
 		
 		
 		String resultado="EXITO";
-		
-		
+		HttpSession session = request.getSession();
+		session.invalidate();
+		//request.getSession(true); //Para crear una nueva y que no casque.
+		//Creo que es esto.
 		
 		return resultado;
 	}

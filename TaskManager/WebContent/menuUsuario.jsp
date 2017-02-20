@@ -9,39 +9,48 @@
 <body>
 	<table border="1" align="center">
 		<tr>
-			<form action="listarTareas" method="post"
-				name="opcionUsuario_listarTareas">
-				
-				<input type="submit" value="Listar tareas" />
-			</form>
-		</tr>
-		
-		<tr>
-			<form action="crearTarea" method="post"
-				name="opcionUsuario_crearTarea">
-				
-				<input type="submit" value="Crear tarea" />
-			</form>
-		</tr>
-		
-		
-		<tr>
-			<form action="editarTareas" method="post"
-				name="opcionUsuario_editarTareas">
-				
-				<input type="submit" value="Editar tareas" />
-			</form>
-		</tr>
-		
-		<tr>
-			<form action="listarCategorias" method="post"
-				name="opcionUsuario_listarCategorias">
-				
-				<input type="submit" value="Listar categorias" />
-			</form>
+			<td>
+				<form action="listarTareas" method="post"
+					name="opcionUsuario_listarTareas">
+
+					<input type="submit" value="Listar tareas" />
+				</form>
+			</td>
+			<td>
+				<form action="IRcrearTarea" method="post"
+					name="opcionUsuario_crearTarea">
+
+					<input type="submit" value="Crear tarea" />
+				</form>
+			</td>
+
+
+			<td>
+				<form action="editarTareas" method="post"
+					name="opcionUsuario_editarTareas">
+
+					<input type="submit" value="Editar tareas" />
+				</form>
+			</td>
+
+			<td>
+				<form action="listarCategorias" method="post"
+					name="opcionUsuario_listarCategorias">
+
+					<input type="submit" value="Listar categorias" />
+				</form>
+			</td>
+			<td>
+				<form action="IRcrearCategoria" method="post"
+					name="opcionUsuario_crearCategoria">
+
+					<input type="submit" value="Crear categoria" />
+				</form>
+			</td>
 		</tr>
 
 	</table>
+	<a id="cerrarSesion_link_id" href="cerrarSesion">Cerrar sesión</a>
 	<%@ include file="pieDePagina.jsp"%>
 </body>
 </html>
