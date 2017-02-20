@@ -1,5 +1,8 @@
 package uo.sdi.business.impl.user;
 
+import java.util.List;
+
+import uo.sdi.acciones.ListarUsuariosAction;
 import uo.sdi.business.UserService;
 import uo.sdi.business.exception.BusinessException;
 import uo.sdi.business.impl.command.CommandExecutor;
@@ -32,5 +35,8 @@ public class UserServiceImpl implements UserService {
 				new FindLoggableUSerCommand<User>(login, password) 
 		);
 	}
+
+	
+	
 
 }

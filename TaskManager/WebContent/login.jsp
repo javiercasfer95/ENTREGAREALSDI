@@ -20,7 +20,7 @@
 			<tr>
 
 				<td align="right">Password</td>
-				<td><input type="text" name="userPass" align="left" size="15"></td>
+				<td><input type="password" name="userPass" align="left" size="15"></td>
 			</tr>
 			<tr>
 				<td><input type="submit" value="Enviar" /></td>

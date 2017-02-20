@@ -1,5 +1,7 @@
 package uo.sdi.business.impl.admin;
 
+
+
 import java.util.List;
 
 import uo.sdi.business.AdminService;
@@ -29,11 +31,6 @@ public class AdminServiceImpl implements AdminService {
 		new CommandExecutor<Void>().execute( new EnableUserCommand( id ) );
 	}
 
-	@Override
-	public List<User> findAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public User findUserById(final Long id) throws BusinessException {
@@ -43,5 +40,16 @@ public class AdminServiceImpl implements AdminService {
 			}
 		});
 	}
+
+	@Override
+	public List<User> findAllUsers() throws BusinessException {
+		return new CommandExecutor<List<User>>().execute( new Command<List<User>>() {
+			@Override public List<User> execute() throws BusinessException {
+				return Persistence.getUserDao().findAll();
+			}
+		});
+	}
+	
+	
 
 }

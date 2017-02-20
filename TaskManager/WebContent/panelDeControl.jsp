@@ -12,25 +12,27 @@
 								(usuario número ${contador})</i>
 	<br/><br/>
 	<jsp:useBean id="user" class="uo.sdi.dto.User" scope="session" />
-	<table>
+	<table border="1" align="center">
 		<tr>
-			<td>Id:</td><td id="id"><jsp:getProperty property="id" name="user" /></td>
+			<dl>
+				<dt>Inbox Tasks</dt>
+				<c:forEach var="entry" items="${inboxTasks}" varStatus="i">
+					<dd id="item_${i.index}">		
+<%-- 						<td><a href="mostrarTarea?id=${entry.id}">${entry.id}</a></td>
+						<td>${entry.name}</td> --%>
+						<dl>
+							<dt>${entry.title}</dt>
+								<dd>
+									${entry.comments}
+								</dd>
+							
+						</dl>
+					</dd>
+				</c:forEach>
+
+			</dl>
 		</tr>
-		<tr>
-			<td>Email:</td>
-			<td id="email"><form action="modificarDatos" method="POST">
-					<input type="text" name="email" size="15"
-						value="<jsp:getProperty property="email" name="user"/>"> 
-					<input type="submit" value="Modificar">
-				</form>
-			</td>
-		</tr>
-		<tr>
-			<td>Es administrador:</td><td id="isAdmin"><jsp:getProperty property="isAdmin" name="user" /></td>
-		</tr>
-		<tr>
-			<td>Login:</td><td id="login"><jsp:getProperty property="login" name="user" /></td>
-		</tr>
+
 	</table>
 	<br/>	
 	<a id="panelDeControl_link_id" href="panelDeControl">Panel de control</a>

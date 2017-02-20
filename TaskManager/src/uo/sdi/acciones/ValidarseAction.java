@@ -46,7 +46,7 @@ public class ValidarseAction implements Accion {
 				session.invalidate();
 				Log.info("El usuario [%s] no está registrado",nombreUsuario);
 				request.setAttribute("mensajeParaElUsuario", "El usuario ["+
-						nombreUsuario+"] no está registrado");
+						nombreUsuario+"] no está registrado o la contraseña es incorrecta.");
 				resultado="FRACASO";
 			}
 		}

@@ -6,13 +6,13 @@
 <body>
 	<form action="registrarse" method="post" name="register_user">
 		<center>
-			<h1>Log in</h1>
+			<h1>Registro</h1>
 		</center>
 		<hr>
 		<br>
 		<table align="center">
 			<tr>
-				<td align="right">User id:</td>
+				<td align="right">Nombre de usuario:</td>
 				<td><input type="text" name="nombreUsuario" align="left"
 					size="15"></td>
 			</tr>

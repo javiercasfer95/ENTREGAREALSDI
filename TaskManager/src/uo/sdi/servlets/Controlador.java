@@ -226,8 +226,8 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		opcionResultadoYJSP.put("validarse", resultadoYJSP);
 
 		resultadoYJSP = new HashMap<String, String>();
-		resultadoYJSP.put("EXITO", "/principalUsuario.jsp");
-		resultadoYJSP.put("FRACASO", "/principalUsuario.jsp");
+		resultadoYJSP.put("EXITO", "/principalAdmin.jsp");
+		resultadoYJSP.put("FRACASO", "/principalAdmin.jsp");
 		opcionResultadoYJSP.put("modificarDatos", resultadoYJSP);
 		
 		resultadoYJSP.put("EXITO", "/login.jsp");

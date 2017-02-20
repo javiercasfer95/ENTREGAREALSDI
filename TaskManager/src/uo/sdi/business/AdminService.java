@@ -12,6 +12,7 @@ public interface AdminService {
 	public void enableUser(Long id) throws BusinessException;
 
 	public List<User> findAllUsers() throws BusinessException;
+	
 	public User findUserById(Long id) throws BusinessException;
 
 }
