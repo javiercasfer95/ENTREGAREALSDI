@@ -21,7 +21,7 @@ public class ModificarEstadoUsuarioAction implements Accion {
 			
 			String resultado="EXITO";
 			//HttpSession session=request.getSession();
-			Long indice= Long.parseLong(request.getParameter("insert"));
+			Long indice= Long.parseLong(request.getParameter("id"));
 		
 			User usuario=null ;
 			try {
