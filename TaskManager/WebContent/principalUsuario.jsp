@@ -16,6 +16,27 @@
 		<tr>
 			<td>Id:</td><td id="id"><jsp:getProperty property="id" name="user" /></td>
 		</tr>
+		
+		<%-- <tr>
+			<td>Login: </td>
+			<td id="login"><form action="modificarDatos" method="POST">
+					<input type="text" name="login" size="15"
+						value="<jsp:getProperty property="login" name="user"/>"> 
+					<input type="submit" value="Modificar">
+				</form>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>Password: </td>
+			<td id="password"><form action="modificarDatos" method="POST">
+					<input type="text" name="password" size="15"
+						value="<jsp:getProperty property="password" name="user"/>"> 
+					<input type="submit" value="Modificar">
+				</form>
+			</td>
+		</tr> --%>
+		
 		<tr>
 			<td>Email:</td>
 			<td id="email"><form action="modificarDatos" method="POST">
@@ -31,6 +52,8 @@
 		<tr>
 			<td>Login:</td><td id="login"><jsp:getProperty property="login" name="user" /></td>
 		</tr>
+		
+		
 		<tr>
 			<td>Estado:</td><td id="status"><jsp:getProperty property="status" name="user" /></td>
 		</tr>

@@ -47,6 +47,14 @@
 					<input type="submit" value="Crear categoria" />
 				</form>
 			</td>
+			
+			<td>
+				<form action="IReditarUsuario" method="post"
+					name="opcionUsuario_editarUsuario">
+
+					<input type="submit" value="Editar mis datos" />
+				</form>
+			</td>
 		</tr>
 
 	</table>

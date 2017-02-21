@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import alb.util.log.Log;
+import sun.org.mozilla.javascript.internal.ast.Name;
 import uo.sdi.acciones.*;
 import uo.sdi.dto.User;
 import uo.sdi.persistence.PersistenceException;
@@ -157,6 +158,8 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		mapaRegistrado.put("crearCategoria", new CrearCategoriaAction());
 		mapaRegistrado.put("cerrarSesion", new CerrarSesionAction());
 		mapaRegistrado.put("IRmenuUsuario", new NavigationAction());
+		mapaRegistrado.put("IReditarUsuario", new NavigationAction());
+		mapaRegistrado.put("mostrarCategoria", new CargarMostrarCategoriaAction());
 		mapaDeAcciones.put("USUARIO", mapaRegistrado);
 
 		
@@ -235,7 +238,7 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		opcionResultadoYJSP.put("validarse", resultadoYJSP);
 
 		resultadoYJSP = new HashMap<String, String>();
-		resultadoYJSP.put("EXITO", "/principalUsuario.jsp");
+		resultadoYJSP.put("EXITO", "/menuUsuario.jsp");
 		resultadoYJSP.put("FRACASO", "/principalUsuario.jsp");
 		opcionResultadoYJSP.put("modificarDatos", resultadoYJSP);
 		
@@ -265,6 +268,20 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		resultadoYJSP.put("EXITO", "/menuUsuario.jsp");
 		resultadoYJSP.put("FRACASO", "/crearTarea.jsp");
 		opcionResultadoYJSP.put("crearTarea", resultadoYJSP);
+		
+		resultadoYJSP = new HashMap<String, String>();
+		resultadoYJSP.put("EXITO", "/principalUsuario.jsp");
+		opcionResultadoYJSP.put("IReditarUsuario", resultadoYJSP);
+		
+		resultadoYJSP = new HashMap<String, String>();
+		resultadoYJSP.put("EXITO", "/listarCategorias.jsp");
+		resultadoYJSP.put("FRACASO", "/menuUsuario.jsp");
+		opcionResultadoYJSP.put("listarCategorias", resultadoYJSP);
+		
+		resultadoYJSP = new HashMap<String, String>();
+		resultadoYJSP.put("EXITO", "/editarCategoria.jsp");
+		resultadoYJSP.put("FRACASO", "/listarCategoiras.jsp");
+		opcionResultadoYJSP.put("mostrarCategoria", resultadoYJSP);
 		
 		mapaDeNavegacion.put("USUARIO", opcionResultadoYJSP);
 
