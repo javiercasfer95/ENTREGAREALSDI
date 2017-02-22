@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import uo.sdi.business.Services;
 import uo.sdi.business.TaskService;
 import uo.sdi.business.exception.BusinessException;
+import uo.sdi.dto.Category;
 import uo.sdi.dto.Task;
 import uo.sdi.dto.User;
 import alb.util.log.Log;
@@ -23,6 +24,7 @@ public class ListarTareasAction implements Accion {
 		List<Task> inboxTasks;
 		List<Task> todayTasks;
 		List<Task> weeklyTasks;
+		List<Category> categoriasUser = (List<Category>) request.getAttribute("categoriasUser");
 		HttpSession session = request.getSession();
 
 		User actualUser = (User) session.getAttribute("user");
@@ -33,10 +35,18 @@ public class ListarTareasAction implements Accion {
 			inboxTasks = taskService.findInboxTasksByUserId(idUser);
 			todayTasks = taskService.findTodayTasksByUserId(idUser);
 			weeklyTasks = taskService.findWeekTasksByUserId(idUser);
+			
+			if(categoriasUser == null || categoriasUser.size() <= 0){
+				categoriasUser = taskService.findCategoriesByUserId(idUser);
+				request.removeAttribute("categoriasUser");
+				request.setAttribute("categoriasUser", categoriasUser);
+			}
+			
 
 			request.setAttribute("inboxTasks", inboxTasks);
 			request.setAttribute("todayTasks", todayTasks);
 			request.setAttribute("weeklyTasks", weeklyTasks);
+			
 			Log.debug(
 					"Obtenida lista de tareas inbox conteniendo [%d] categorías",
 					inboxTasks.size());

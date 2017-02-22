@@ -21,6 +21,7 @@
 			</dl>
 		</tr>
 	</table>
+	<a id="cancelarCrearCategoria_link_id" href="IRmenuUsuario">Cancelar</a>
 	<%@ include file="pieDePagina.jsp"%>
 </body>
 </html>

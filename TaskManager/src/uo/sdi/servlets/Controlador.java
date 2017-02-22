@@ -283,6 +283,11 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		resultadoYJSP.put("FRACASO", "/listarCategoiras.jsp");
 		opcionResultadoYJSP.put("mostrarCategoria", resultadoYJSP);
 		
+		resultadoYJSP = new HashMap<String, String>();
+		resultadoYJSP.put("EXITO", "/listarTareas.jsp");
+		resultadoYJSP.put("FRACASO", "/menuUsuario.jsp");
+		opcionResultadoYJSP.put("listarTareas", resultadoYJSP);
+		
 		mapaDeNavegacion.put("USUARIO", opcionResultadoYJSP);
 
 

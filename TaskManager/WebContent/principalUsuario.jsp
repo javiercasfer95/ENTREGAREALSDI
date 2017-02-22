@@ -60,6 +60,7 @@
 	</table>
 	<br/>	
 	<a id="cerrarSesion_link_id" href="cerrarSesion">Cerrar sesión</a>
+	<a id="cancelarCrearCategoria_link_id" href="IRmenuUsuario">Cancelar</a>
 	
 	<%@ include file="pieDePagina.jsp" %>
 </body>

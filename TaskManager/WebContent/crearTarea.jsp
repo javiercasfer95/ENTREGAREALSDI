@@ -10,8 +10,7 @@
 	<table>
 		<tr>
 			<td>
-				<form action="crearTarea" method="post"
-					name="crearTarea_form_name">
+				<form action="crearTarea" method="post" name="crearTarea_form_name">
 					<center>
 						<h1>Crear una tarea nueva:</h1>
 					</center>
@@ -23,27 +22,32 @@
 							<td><input type="text" name="tituloTarea" align="left"
 								size="15"></td>
 						</tr>
-						
+
 						<tr>
 							<td align="right">Comentario:</td>
 							<td><input type="text" name="comentarioTarea" align="left"
 								size="15"></td>
 						</tr>
-						
+
 						<tr>
-							<td align="right">Fecha planned (NI IDEA DE COMO SE PONE):</td>
+							<td align="right">Fecha planned:</td>
 							<td><input type="date" name="plannedTarea" align="left"
 								size="15"></td>
 						</tr>
 						<tr>
-							<td align="right">Fecha finish (NI IDEA DE COMO SE PONE):</td>
-							<td><input type="date" name="plannedTarea" align="left"
+							<td align="right">Fecha finish:</td>
+							<td><input type="date" name="finishTarea" align="left"
 								size="15"></td>
 						</tr>
-						
+
 						<tr>
-							<td align="right">Menu desplegable con las categorias del usuario (atributo categoriasUser de la sesion):</td>
-							<td></td>
+							<td align="right">Editar categoria</td>
+							<td><select name="categoriaSeleccionada">
+									<c:forEach var="entry" items="${categoriasUser}" varStatus="i">
+										<option value = ${entry.id}>${entry.name}</option>
+									</c:forEach>
+
+							</select></td>
 						</tr>
 						<!-- Terminar la creacion -->
 						<tr>

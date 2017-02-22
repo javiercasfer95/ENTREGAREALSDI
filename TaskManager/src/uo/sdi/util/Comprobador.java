@@ -38,4 +38,13 @@ public class Comprobador {
 		}
 		return problems;
 	}
+	
+	public static boolean esLetrasYnumerosValido(String into){
+		for(char c : into.toCharArray()){
+			if(!(Character.isAlphabetic(c) || Character.isDigit(c) || Character.isWhitespace(c))){
+				return false;
+			}
+		}
+		return true;
+	}
 }

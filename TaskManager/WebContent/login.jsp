@@ -29,8 +29,8 @@
 	</form>
 	<a id="registrarUsuarios_link_id" href="registrarUsuarios_form.jsp">Registrar
 		usuarios</a>
-	<a id="listarCategorias_link_id" href="listarCategorias">Lista de
-		categorias</a>
+<!-- 	<a id="listarCategorias_link_id" href="listarCategorias">Lista de
+		categorias</a> -->
 	<%@ include file="pieDePagina.jsp"%>
 </body>
 </html>
