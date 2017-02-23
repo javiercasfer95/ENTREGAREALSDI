@@ -17,11 +17,15 @@
 	<jsp:useBean id="category" class="uo.sdi.dto.Category" scope="session" />
 	<table>
 		<tr>
+		<td>Id Categoria: </td>
+		<td><input type="text" name="id" size="1"
+						value="<jsp:getProperty property="id" name="category"/>"  readonly="readonly"/>
+		<tr>
 			<td>Nombre de la categoría:</td>
 			<td id="nombreCategoria"><form action="modificarCategoria"
 					method="POST">
 					<input type="text" name="nombreCategoria" size="15"
-						value="<jsp:getProperty property="name" name="category"/>">
+						value="<jsp:getProperty property="name" name="category"/>"/>
 					<input type="submit" value="Modificar">
 				</form></td>
 			<td>
@@ -32,7 +36,9 @@
 		</tr>
 	</table>
 	<br />
+	<a id="cerrarSesion_link_id" href="IRmenuUsuario">Menu</a>
 	<a id="cerrarSesion_link_id" href="cerrarSesion">Cerrar sesión</a>
+	
 
 	<%@ include file="pieDePagina.jsp"%>
 </body>

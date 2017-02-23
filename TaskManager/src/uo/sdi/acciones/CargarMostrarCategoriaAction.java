@@ -16,15 +16,13 @@ public class CargarMostrarCategoriaAction implements Accion{
 			HttpServletResponse response) {
 		String resultado = "EXITO";
 		
-		String id = request.getParameter("id");
-		long realID = Long.parseLong(id);
-		
+		Long id = Long.parseLong(request.getParameter("id"));
 		try {
-			Category cat = Services.getTaskService().findCategoryById(realID);
-			request.setAttribute("categoriaEditar", cat);
+			Category cat = Services.getTaskService().findCategoryById(id);
+			request.setAttribute("category", cat);
 		} catch (BusinessException e) {
 			Log.debug("Algo ha ocurrido obteniendo la categoria con id: %s",
-					realID);
+					id);
 			resultado="FRACASO";
 		}
 		return resultado;
