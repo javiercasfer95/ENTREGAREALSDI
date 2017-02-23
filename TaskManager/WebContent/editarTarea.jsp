@@ -10,7 +10,7 @@
 	<table>
 		<tr>
 			<td>
-				<form action="modificarTarea" method="post"
+				<form action="modificarTarea?id=${tareaAeditar.id}" method="post"
 					name="crearTarea_form_name">
 
 					<center>
@@ -20,53 +20,56 @@
 					<br>
 					<table align="center">
 						<jsp:useBean id="tareaAeditar" class="uo.sdi.dto.Task"
-							scope="request"/>
-							<tr>/
-								<td align="right">Titulo de la tarea:</td>
-								<td><input type="text" name="tituloTarea" align="left"
-									size="15"
-									value=<jsp:getProperty property="title" name="tareaAeditar"/>></td>
-							</tr>
+							scope="request" />
+						<tr>
 
-							<tr>
-								<td align="right">Comentario:</td>
-								<td><input type="text" name="comentarioTarea" align="left"
-									size="15"
-									value=<jsp:getProperty property="comments" name="tareaAeditar"/>></td>
-							</tr>
+							<td align="right">Titulo de la tarea:</td>
+							<td><input type="text" name="tituloTarea" align="left"
+								size="15"
+								value=<jsp:getProperty property="title" name="tareaAeditar"/>></td>
+						</tr>
 
-							<tr>
-								<td align="right">Fecha planned:</td>
-								<td><input type="date" name="plannedTarea" align="left"
-									size="15"
-									value=<jsp:getProperty property="planned" name="tareaAeditar"/>></td>
-							</tr>
-							<tr>
-								<td align="right">Fecha finish:</td>
-								<td><input type="date" name="finishTarea" align="left"
-									size="15"
-									value=<jsp:getProperty property="finished" name="tareaAeditar"/>></td>
-							</tr>
+						<tr>
+							<td align="right">Comentario:</td>
+							<td><input type="text" name="comentarioTarea" align="left"
+								size="15"
+								value=<jsp:getProperty property="comments" name="tareaAeditar"/>></td>
+						</tr>
 
-							<tr>
-								<td align="right">Editar categoria</td>
-								<td><select name="categoriaSeleccionada">
-										<c:forEach var="entry" items="${categoriasUser}" varStatus="i">
-											<option value=${entry.id}>${entry.name}</option>
-										</c:forEach>
-										<jsp:useBean id="catFromEditedTask"
-											class="uo.sdi.dto.Category" scope="session">
-											<option value=value
-												= <jsp:getProperty property="name" name="catFromEditedTask"/>
-												selected />>
-										</jsp:useBean>
-								</select></td>
-							</tr>
-							<!-- Terminar la creacion -->
-							<tr>
-								<td><input type="submit" value="Terminar" /></td>
-							</tr>
-						
+						<tr>
+							<td align="right">Fecha planned:</td>
+							<td><input type="date" name="plannedTarea" align="left"
+								size="15"
+								value=<jsp:getProperty property="planned" name="tareaAeditar"/>></td>
+						</tr>
+<!-- 						<tr>
+							<td align="right">Fecha finish:</td>
+							<td><input type="date" name="finishTarea" align="left"
+								size="15"
+								value=<jsp:getProperty property="finished" name="tareaAeditar"/>></td>
+						</tr> -->
+
+						<tr>
+							<td align="right">Editar categoria</td>
+							<td><select name="categoriaSeleccionada">
+									<c:forEach var="entry" items="${categoriasUser}" varStatus="i">
+										<option value=${entry.id}>${entry.name}</option>
+									</c:forEach>
+									<jsp:useBean id="catFromEditedTask" class="uo.sdi.dto.Category"
+										scope="session">
+										<option
+											value=<jsp:getProperty property="id" name="catFromEditedTask"/>
+											selected><jsp:getProperty property="name"
+												name="catFromEditedTask" />
+										</option>
+									</jsp:useBean>
+							</select></td>
+						</tr>
+						<!-- Terminar la creacion -->
+						<tr>
+							<td><input type="submit" value="Terminar" /></td>
+						</tr>
+
 					</table>
 
 				</form>

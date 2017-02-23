@@ -35,9 +35,8 @@
 						</c:otherwise>
 					</c:choose>
 					<td>${entry.categoryId}</td>
-					<td><input type="checkbox"
-						name="marcarFinalizadaInbox${entry.id}" /></td>
-					<%-- <td><input type="submit" name="editarTareaInbox${entry.id}"  id = ${entry.id}/></td> --%>
+					<td><a id="link_finalizarTareaNum_${entry.id}"
+						href="finalizarTarea?id=${entry.id}">${entry.finished==null ? 'Finalizar tarea' : 'Tarea finalizada'}</a></td>
 					<td><a id="link_${entry.id}"
 						href="cargarEditarTarea?id=${entry.id}">Editar tarea</a></td>
 				</tr>
@@ -71,9 +70,8 @@
 						</c:otherwise>
 					</c:choose>
 					<td>${entry.categoryId}</td>
-					<td><input type="checkbox"
-						name="marcarFinalizadaHoy${entry.id}" /></td>
-					<%-- <td><input type="submit" name="editarTareaHoy${entry.id}"  id = ${entry.id}/></td> --%>
+					<td><a id="link_finalizarTareaNum_${entry.id}"
+						href="finalizarTarea?id=${entry.id}">${entry.finished==null ? 'Finalizar tarea' : 'Tarea finalizada'}</a></td>
 					<td><a id="link_${entry.id}"
 						href="cargarEditarTarea?id=${entry.id}">Editar tarea</a></td>
 				</tr>
@@ -107,55 +105,13 @@
 					<td>${entry.comments}</td>
 					<td>${entry.planned}</td>
 					<td>${entry.categoryId}</td>
-					<td><input type="checkbox"
-						name="marcarFinalizadaSemana${entry.id}" /></td>
-					<%-- <td><input type="submit" name="editarTareaSemana${entry.id}"  id = ${entry.id}/></td> --%>
-					<td><a id="link_${entry.id}"
+					<td><a id="link_finalizarTareaNum_${entry.id}"
+						href="finalizarTarea?id=${entry.id}">${entry.finished==null ? 'Finalizar tarea' : 'Tarea finalizada'}</a></td>
+					<td><a id="link_editarTareaNum_${entry.id}"
 						href="cargarEditarTarea?id=${entry.id}">Editar tarea</a></td>
 				</tr>
 			</c:forEach>
 		</table>
-		<%-- 		<center>
-			<h1>Editar Tarea</h1>
-		</center>
-		<hr>
-		<br>
-		<table align="center">
-			<tr>
-				<td align="right">Nombre de la tarea</td>
-				<td><input type="text" name="nombreTarea" align="left"
-					size="15"></td>
-			</tr>
-			<tr>
-				<td align="right">Comentario de la tarea</td>
-				<td><input type="text" name="comentarioTarea" align="left"
-					size="15"></td>
-			</tr>
-			<tr>
-				<td align="right">Fecha planeada(formato: dd-MM-yyyy)</td>
-				<td><input type="date" name="plannedTarea" align="left"
-					size="15"></td>
-			</tr>
-			<tr>
-				<td align="right">Editar categoria</td>
-				<td>
-					<!-- <input type="text" name="categoriaTarea" align="left"
-					size="15"> -->
-				<select name="listaCategoriasUsuario">
-					<c:forEach var="entry" items="${categoriasUser}" varStatus="i">
-						<option value = ${entry.id}> ${entry.name}</option>
-					</c:forEach>
-						
-				</select>
-
-
-				</td>
-			</tr>
-		</table>
-		<br>
-		<center>
-			<input type="submit" value="Finalizar Tarea/Editar">
-		</center> --%>
 	</form>
 	<a id="añadirTarea_link_id" href="IRcrearTarea">Añadir Tarea</a>
 	<a id="cancelarCrearCategoria_link_id" href="IRmenuUsuario">Cancelar</a>

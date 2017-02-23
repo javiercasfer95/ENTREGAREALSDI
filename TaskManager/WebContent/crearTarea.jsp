@@ -34,11 +34,11 @@
 							<td><input type="date" name="plannedTarea" align="left"
 								size="15"></td>
 						</tr>
-						<tr>
+<!-- 						<tr>
 							<td align="right">Fecha finish:</td>
 							<td><input type="date" name="finishTarea" align="left"
 								size="15"></td>
-						</tr>
+						</tr> -->
 
 						<tr>
 							<td align="right">Editar categoria</td>
