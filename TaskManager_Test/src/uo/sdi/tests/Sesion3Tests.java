@@ -12,7 +12,7 @@ public class Sesion3Tests {
 	@Before
     public void prepare() {
     	john=new WebTester();
-    	john.setBaseUrl("http://localhost:8280/sesion3.MVCCasero");
+    	john.setBaseUrl("http://localhost:8280/TaskManager/");
     }
 
     @Test
@@ -52,5 +52,18 @@ public class Sesion3Tests {
     	browser.submit(); // Enviar formulario
     	browser.assertTitleEquals("TaskManager - Inicie sesión");  // Comprobar título de la página
     }
+
+	  @Test 
+	    public void adminTest(){    
+	    	WebTester admin = new WebTester();
+	    	
+	    	admin.setBaseUrl("http://localhost:8280/TaskManager/");    
+	    	admin.setTextField("nombreUsuario", "admin");
+	    	admin.setTextField("userPass", "admin123");
+	    	admin.submit();
+	    	admin.assertTitleEquals("TaskManager - Página principal del administrador");
+	    }
+  
+    
 
 }
