@@ -46,8 +46,7 @@
 	</td>
 
 	<br />
-	<a id="panelDeControl_link_id" href="panelDeControl">Panel de
-		control</a>
+	<a id="info_link_id" href="IrPanelDatos">Panel de datos</a>
 	<a id="cerrarSesion_link_id" href="cerrarSesion">Cerrar sesión</a>
 
 	<%@ include file="pieDePagina.jsp"%>

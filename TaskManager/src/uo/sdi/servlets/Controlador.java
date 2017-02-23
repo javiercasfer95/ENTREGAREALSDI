@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import alb.util.log.Log;
-import sun.org.mozilla.javascript.internal.ast.Name;
 import uo.sdi.acciones.*;
 import uo.sdi.dto.User;
 import uo.sdi.persistence.PersistenceException;
@@ -170,6 +169,7 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		mapaAdmin.put("cerrarSesion", new CerrarSesionAction());
 		mapaAdmin.put("IRpanelDeControl", new ListarUsuariosAction());
 		mapaAdmin.put("cambiarEstado", new ModificarEstadoUsuarioAction());
+		mapaAdmin.put("IrPanelDatos",new NavigationAction());
 		mapaDeAcciones.put("ADMIN", mapaAdmin);
 	}
 
@@ -290,10 +290,6 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		
 		mapaDeNavegacion.put("USUARIO", opcionResultadoYJSP);
 
-
-		
-		
-
 		// Mapa de navegación del administrador
 		opcionResultadoYJSP = new HashMap<String, Map<String, String>>();
 		resultadoYJSP = new HashMap<String, String>();
@@ -315,9 +311,14 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		opcionResultadoYJSP.put("IRpanelDeControl", resultadoYJSP);
 
 		resultadoYJSP = new HashMap<String, String>();
+		resultadoYJSP.put("EXITO", "/principalAdmin.jsp");
+		opcionResultadoYJSP.put("IrPanelDatos", resultadoYJSP);
+		
+		resultadoYJSP = new HashMap<String, String>();
 		resultadoYJSP.put("EXITO", "/panelDeControl.jsp");
 		opcionResultadoYJSP.put("cambiarEstado", resultadoYJSP);
 
+		
 		mapaDeNavegacion.put("ADMIN", opcionResultadoYJSP);
 	}
 
