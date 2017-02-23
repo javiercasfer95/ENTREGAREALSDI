@@ -7,10 +7,11 @@
 <title>TaskManager - Listado de categorías</title>
 </head>
 <body>
+<center><h1>Mis categorias</h1></center>
+				<hr/>
 	<table border="1" align="center">
 		<tr>
-				<dt>Mis categorias</dt>
-				<hr/>
+				
 				<c:forEach var="entry" items="${listaCategorias}" varStatus="i">
 					<tr id="item_${i.index}">
 						<td>${entry.id}</td>
