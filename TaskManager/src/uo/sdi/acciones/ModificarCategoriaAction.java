@@ -19,7 +19,8 @@ public class ModificarCategoriaAction implements Accion{
 		String resultado="EXITO";
 		//HttpSession session=request.getSession();
 		Long indice= Long.parseLong(request.getParameter("id"));
-		Category categoria=null;;
+		String nuevoNombre= request.getParameter("nombreCategoria");
+		Category categoria=null;
 		
 		try {
 		
@@ -27,15 +28,14 @@ public class ModificarCategoriaAction implements Accion{
 			categoria = taskService.findCategoryById(indice);
 			 
 			String nombreAnterior = categoria.getName();
-			String nuevoNombre= request.getParameter("nombreCategoria");
-			Category categoriaClon = Cloner.clone(categoria);
-			categoriaClon.setName(nuevoNombre);
+		
+			categoria.setName(nuevoNombre);
 			
-			taskService.updateCategory(categoriaClon);
+			taskService.updateCategory(categoria);
 			
 			Log.debug("Modificado el nombre de la categoria con el id= [%d] de [%s] a [%s]", 
 					categoria.getId(),nombreAnterior, categoria.getName());
-			new CargarMostrarCategoriaAction();
+			new ListarCategoriasAction().execute(request, response);
 		}
 		catch (BusinessException b) {
 			Log.debug("Algo ha ocurrido actualizando el nombre de la categoria con id [%d]. Nombre actual [%s]: %s", 

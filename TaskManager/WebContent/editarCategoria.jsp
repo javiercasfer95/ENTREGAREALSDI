@@ -16,24 +16,22 @@
 	<br />
 	<jsp:useBean id="category" class="uo.sdi.dto.Category" scope="session" />
 	<table>
+	<form action="modificarCategoria" method="POST">
 		<tr>
 		<td>Id Categoria: </td>
 		<td><input type="text" name="id" size="1"
 						value="<jsp:getProperty property="id" name="category"/>"  readonly="readonly"/>
 		<tr>
 			<td>Nombre de la categoría:</td>
-			<td id="nombreCategoria"><form action="modificarCategoria"
-					method="POST">
-					<input type="text" name="nombreCategoria" size="15"
+					<td><input type="text" name="nombreCategoria" size="15"
 						value="<jsp:getProperty property="name" name="category"/>"/>
-					<input type="submit" value="Modificar">
-				</form></td>
+					<input type="submit" value="Guardar"/></td>
 			<td>
-				<form action="eliminarCateogira" method="POST">
-						<input type="submit" value="Eliminar categoria">
-				</form>
+				<a id="link_${category.id}"
+						href="eliminarCategoria?id=${category.id}">Eliminar</a>
 			</td>
 		</tr>
+		</form>
 	</table>
 	<br />
 	<a id="cerrarSesion_link_id" href="IRmenuUsuario">Menu</a>

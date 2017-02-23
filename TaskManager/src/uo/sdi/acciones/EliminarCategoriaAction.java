@@ -19,7 +19,7 @@ public class EliminarCategoriaAction implements Accion{
 				TaskService tS = Services.getTaskService();
 				
 				tS.deleteCategory(id);
-				
+				new ListarCategoriasAction().execute(request, response);
 				Log.debug("Se ha eliminado correctamente la categoria con ID: [%s]", id);
 			} catch (BusinessException e) {
 				result = "FRACASO";
