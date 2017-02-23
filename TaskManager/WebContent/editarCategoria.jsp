@@ -14,14 +14,14 @@
 	</i>
 	<br />
 	<br />
-	<jsp:useBean id="user" class="uo.sdi.dto.User" scope="session" />
+	<jsp:useBean id="category" class="uo.sdi.dto.Category" scope="session" />
 	<table>
 		<tr>
 			<td>Nombre de la categoría:</td>
 			<td id="nombreCategoria"><form action="modificarCategoria"
 					method="POST">
 					<input type="text" name="nombreCategoria" size="15"
-						value="<jsp:getProperty property="name" name="categoriaEditar"/>">
+						value="<jsp:getProperty property="name" name="category"/>">
 					<input type="submit" value="Modificar">
 				</form></td>
 			<td>

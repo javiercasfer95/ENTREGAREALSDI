@@ -9,13 +9,13 @@
 <body>
 	<table border="1" align="center">
 		<tr>
-			<dl>
 				<dt>Mis categorias</dt>
-
+				<hr/>
 				<c:forEach var="entry" items="${listaCategorias}" varStatus="i">
 					<tr id="item_${i.index}">
-						<td><a href="mostrarCategoria?id=${entry.id}">${entry.id}</a></td>
+						<td>${entry.id}</td>
 						<td>${entry.name}</td>
+						<td><a href="mostrarCategoria?id=${entry.id}">Editar</a></td>
 					</tr>
 				</c:forEach>
 			</dl>
