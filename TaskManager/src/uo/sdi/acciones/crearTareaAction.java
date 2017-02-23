@@ -76,10 +76,16 @@ public class crearTareaAction implements Accion {
 				//Hasta aqui todo ha ido bien.
 				try {
 					tasker.createTask(task);
+					Log.debug(
+							"Tarea [%s] añadida correctamente",
+							task.getTitle());
 					request.setAttribute("mensajeParaElUsuario",
 							"Tarea añadida correctamente.");
 				} catch (BusinessException e) {
 					resultado = "FRACASO";
+					Log.debug(
+							"No se ha podido guardar en la base de datos la tarea [%s].",
+							task.getTitle());
 					request.setAttribute("mensajeParaElUsuario",
 							"No se ha podido guardar en la base de datos. Inténtelo más tarde.");
 				}

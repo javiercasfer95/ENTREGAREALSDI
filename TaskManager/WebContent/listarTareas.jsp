@@ -7,7 +7,7 @@
 <title>TaskManager - Listado de tareas</title>
 </head>
 <body>
-	<form action="finalizarTarea" method="POST">
+	<form action="cargarEditarTarea" method="POST">
 		<center>
 			<h1>Lista Tareas Inbox</h1>
 		</center>
@@ -37,7 +37,9 @@
 					<td>${entry.categoryId}</td>
 					<td><input type="checkbox"
 						name="marcarFinalizadaInbox${entry.id}" /></td>
-					<td><input type="checkbox" name="editarTareaInbox${entry.id}" /></td>
+					<%-- <td><input type="submit" name="editarTareaInbox${entry.id}"  id = ${entry.id}/></td> --%>
+					<td><a id="link_${entry.id}"
+						href="cargarEditarTarea?id=${entry.id}">Editar tarea</a></td>
 				</tr>
 			</c:forEach>
 		</table>
@@ -71,7 +73,9 @@
 					<td>${entry.categoryId}</td>
 					<td><input type="checkbox"
 						name="marcarFinalizadaHoy${entry.id}" /></td>
-					<td><input type="checkbox" name="editarTareaHoy${entry.id}" /></td>
+					<%-- <td><input type="submit" name="editarTareaHoy${entry.id}"  id = ${entry.id}/></td> --%>
+					<td><a id="link_${entry.id}"
+						href="cargarEditarTarea?id=${entry.id}">Editar tarea</a></td>
 				</tr>
 			</c:forEach>
 		</table>
@@ -105,11 +109,13 @@
 					<td>${entry.categoryId}</td>
 					<td><input type="checkbox"
 						name="marcarFinalizadaSemana${entry.id}" /></td>
-					<td><input type="checkbox" name="editarTareaSemana${entry.id}" /></td>
+					<%-- <td><input type="submit" name="editarTareaSemana${entry.id}"  id = ${entry.id}/></td> --%>
+					<td><a id="link_${entry.id}"
+						href="cargarEditarTarea?id=${entry.id}">Editar tarea</a></td>
 				</tr>
 			</c:forEach>
 		</table>
-		<center>
+		<%-- 		<center>
 			<h1>Editar Tarea</h1>
 		</center>
 		<hr>
@@ -149,7 +155,7 @@
 		<br>
 		<center>
 			<input type="submit" value="Finalizar Tarea/Editar">
-		</center>
+		</center> --%>
 	</form>
 	<a id="añadirTarea_link_id" href="IRcrearTarea">Añadir Tarea</a>
 	<a id="cancelarCrearCategoria_link_id" href="IRmenuUsuario">Cancelar</a>

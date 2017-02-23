@@ -24,7 +24,7 @@
 				</form>
 			</td>
 
-
+<!-- 
 			<td>
 				<form action="editarTareas" method="post"
 					name="opcionUsuario_editarTareas">
@@ -32,7 +32,7 @@
 					<input type="submit" value="Editar tareas" />
 				</form>
 			</td>
-
+ -->
 			<td>
 				<form action="listarCategorias" method="post"
 					name="opcionUsuario_listarCategorias">
