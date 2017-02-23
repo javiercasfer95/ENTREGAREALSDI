@@ -39,18 +39,7 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		String rolAntes, rolDespues;
 
 		try {
-			accionNavegadorUsuario = request.getServletPath().replace("/", ""); // Obtener
-																				// el
-																				// string
-																				// que
-																				// hay
-																				// a
-																				// la
-																				// derecha
-																				// de
-																				// la
-																				// última
-																				// /
+			accionNavegadorUsuario = request.getServletPath().replace("/", "");
 
 			rolAntes = obtenerRolDeSesion(request);
 
@@ -160,7 +149,8 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		mapaRegistrado.put("IReditarUsuario", new NavigationAction());
 		mapaRegistrado.put("mostrarCategoria", new CargarMostrarCategoriaAction());
 		mapaRegistrado.put("cargarEditarTarea", new CargarEditarTareaAction());
-		mapaRegistrado.put("modificarTarea", null);
+		mapaRegistrado.put("modificarTarea", new ModificarTareaAction());
+		mapaRegistrado.put("finalizarTarea", new FinalizarTareaAction());
 		mapaDeAcciones.put("USUARIO", mapaRegistrado);
 
 		
@@ -299,6 +289,11 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		resultadoYJSP.put("EXITO", "/menuUsuario.jsp");
 		resultadoYJSP.put("FRACASO", "/listarTareas.jsp");
 		opcionResultadoYJSP.put("modificarTarea", resultadoYJSP);
+		
+		resultadoYJSP = new HashMap<String, String>();
+		resultadoYJSP.put("EXITO", "/menuUsuario.jsp");
+		resultadoYJSP.put("FRACASO", "/menuUsuario.jsp");
+		opcionResultadoYJSP.put("finalizarTarea", resultadoYJSP);
 		
 		mapaDeNavegacion.put("USUARIO", opcionResultadoYJSP);
 

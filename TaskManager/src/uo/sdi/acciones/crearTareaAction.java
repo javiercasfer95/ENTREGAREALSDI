@@ -29,7 +29,7 @@ public class crearTareaAction implements Accion {
 		String title = request.getParameter("tituloTarea");
 		String comentario = request.getParameter("comentarioTarea");
 		String fechaPlanned = request.getParameter("plannedTarea");
-		String fechaFinish = request.getParameter("finishTarea");
+		//String fechaFinish = request.getParameter("finishTarea");
 		
 		//Deberia dar el id por el value de la etiqueta
 		String categoriaSelected = request
@@ -38,9 +38,9 @@ public class crearTareaAction implements Accion {
 		boolean titleOK = Comprobador.esLetrasYnumerosValido(title);
 		boolean comentarioOK = true; // Yo creo que no necesita ningun filtro.
 		boolean fechaPlannedOK = fechaPlanned.equals("") ? false : true;
-		boolean fechaFinishOK = fechaFinish.equals("") ? false : true;
+		//boolean fechaFinishOK = fechaFinish.equals("") ? false : true;
 
-		if (!(titleOK && comentarioOK && fechaFinishOK && fechaPlannedOK)) {
+		if (!(titleOK && comentarioOK && fechaPlannedOK)) {
 			request.setAttribute("mensajeParaElUsuario",
 					"Comprueba que todos los campos se han introducido correctamente!.");
 			resultado = "FRACASO";
@@ -56,22 +56,22 @@ public class crearTareaAction implements Accion {
 			
 			 //Fechas
 			Date plannedDate = null;
-			Date finishDate = null;
+			//Date finishDate = null;
 			try {
 				 plannedDate = new SimpleDateFormat("yyyy-mm-dd").parse(fechaPlanned);
-				 finishDate = new SimpleDateFormat("yyyy-mm-dd").parse(fechaPlanned);
+				 //finishDate = new SimpleDateFormat("yyyy-mm-dd").parse(fechaFinish);
 			} catch (ParseException e) {
 				Log.debug(
 						"Error al parsear las fechas [%s] y [%s]",
-						fechaPlanned, fechaFinish);
+						fechaPlanned);
 			}
 			
-			if(!(plannedDate != null && finishDate != null)){
+			if(!(plannedDate != null)){
 				resultado = "FRACASO";
 			}else{
 				
 				task.setPlanned(plannedDate);
-				task.setFinished(finishDate);
+				task.setFinished(null);
 				
 				//Hasta aqui todo ha ido bien.
 				try {
